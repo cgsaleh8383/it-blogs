@@ -1,0 +1,106 @@
+.site-navigation {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    color: $text-color;
+    background-color: #fff;
+
+    .menu-title {
+        font-size: 24px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+    .toggle_menu {
+        font-size: 36px;
+        width: 65px;
+        align-items: center;
+        cursor: pointer;
+        display: none;
+    }
+    .menu-contact-container {
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+        .ant-avatar {
+            background: $background;
+            border: 1px solid $border;
+        }
+        .menu-avatar-name {
+            font-size: 18px;
+            margin-left: 15px;
+        }
+    }
+
+    ul {
+        height: 100%;
+        margin-block-start: 0;
+        margin-inline-end: 0;
+        padding-inline-start: 0;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0 20px 0 50px;
+        a {
+            text-decoration: none;
+            padding: 0 20px 0 20px;
+            font-size: 17px;
+            color: $text-color;
+            &:hover {
+                color: $text-links;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .site-navigation {
+        .menu-contact-container {
+            width: 300px;
+            height: calc(100% - 65px);
+            background: white;
+            position: absolute;
+            top: 65px;
+            left: -300px;
+            padding: 0;
+            padding-left: 30px;
+            flex-direction: column-reverse;
+            transition: 300ms ease left;
+            -webkit-transition: 300ms ease left;
+            -moz-transition: 300ms ease left;
+            -ms-transition: 300ms ease left;
+            -o-transition: 300ms ease left;
+
+            a{
+                width: 100%;
+                padding: 0;
+            }
+            ul{
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0;
+                padding-top: 20px;
+            }
+            li{
+                height: 65px;
+                display: flex;
+                align-items: center;
+            }
+            ul, li, .menu-avatar-container{
+                width: 100%;
+            }
+            .menu-avatar-container{
+                padding-top: 20px;
+                
+            }
+            &.active{
+                left: 0px;
+            }
+        }
+        .toggle_menu {
+            display: flex;
+        }
+    }
+}
